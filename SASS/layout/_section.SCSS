@@ -1,0 +1,13 @@
+@use "../global/colors";
+.section {
+  background: colors.$highlight;
+  color: colors.$text;
+  padding: 50px 20px;
+  .container {
+    margin: 0 auto;
+    width: 1170px;
+    h2 {
+      margin-bottom: 15px;
+    }
+  }
+}

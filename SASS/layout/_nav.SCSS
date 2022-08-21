@@ -1,0 +1,33 @@
+@use "../global/colors";
+.nav {
+  background-color: colors.$main;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav {
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    li {
+      flex-grow: 1;
+      a {
+        padding: 15px 20px;
+        color: colors.$alt;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        transition: transform 80ms;
+      }
+      :hover {
+        color: #faedcd;
+        background-color: colors.$main-hover;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
