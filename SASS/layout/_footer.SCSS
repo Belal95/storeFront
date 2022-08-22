@@ -1,0 +1,63 @@
+@use "../global/colors";
+footer {
+  background-color: colors.$main;
+  margin-top: 50px;
+  padding: 40px 0;
+  .container {
+    width: 1170px;
+    .links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 10px;
+      .box {
+        display: flex;
+        flex-wrap: wrap;
+        & > * {
+          flex-basis: 100%;
+          margin-bottom: 5px;
+        }
+        h3 {
+        }
+        p {
+        }
+        .form {
+          display: flex;
+          justify-content: space-between;
+          #newsEmail {
+            width: 70%;
+          }
+          .btn {
+            width: 30%;
+          }
+        }
+        > a {
+        }
+        ul {
+          li {
+            a {
+            }
+          }
+        }
+      }
+    }
+    .address {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px auto;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 10px 5px;
+    }
+    :last-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      :last-child {
+      }
+    }
+  }
+}

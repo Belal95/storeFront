@@ -1,4 +1,5 @@
 @use "./main";
-@use "./layout/slider";
-@use "./layout/section";
-@use "./layout/shop";
+@use "./layout/home/slider";
+@use "./layout/home/section";
+@use "./layout/home/shop";
+@use "./layout/footer";

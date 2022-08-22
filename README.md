@@ -1,2 +1,3 @@
-# storeFront
-Front-End for store using pure javaScript
+# Online Store
+
+Front-End for online store using pure javaScript & SASS
