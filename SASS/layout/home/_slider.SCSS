@@ -1,10 +1,70 @@
+@use "../../global/colors";
 .slider {
   overflow: hidden;
+  position: relative;
+  #arrowLeft,
+  #arrowRight {
+    position: absolute;
+    z-index: 800;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 40px;
+    box-sizing: content-box;
+    border-radius: 44%;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgba($color: colors.$main, $alpha: 0.5);
+    &:hover {
+      background-color: rgba($color: colors.$main, $alpha: 0.7);
+      border: 1px solid colors.$main;
+    }
+    &:nth-child(2) {
+      right: 40px;
+      left: initial;
+    }
+  }
+  .bullets {
+    width: 150px;
+    height: 44px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    z-index: 800;
+    align-items: center;
+    div {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: border 100ms;
+      background-color: rgba($color: #fff, $alpha: 0.5);
+      &:hover {
+        background-color: rgba($color: #fff, $alpha: 0.7);
+        border: 1px solid #fff;
+      }
+      &.selected {
+        background-color: rgba($color: #fff, $alpha: 0.7);
+        border: 1px solid #fff;
+      }
+    }
+  }
   .container {
     height: 90vh;
     display: flex;
-    width: 300%;
+    position: relative;
     transition: all 1s;
+    &.position1 {
+      left: 0;
+    }
+    &.position2 {
+      left: -100%;
+    }
+    &.position3 {
+      left: -200%;
+    }
     div {
       height: calc(100vh - 48.8px);
       width: 33.33%;

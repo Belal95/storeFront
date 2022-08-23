@@ -62,15 +62,86 @@ nav ul li :hover {
 
 .slider {
   overflow: hidden;
+  position: relative;
+}
+.slider #arrowLeft,
+.slider #arrowRight {
+  position: absolute;
+  z-index: 800;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
+  left: 40px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-radius: 44%;
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgba(212, 163, 115, 0.5);
+}
+.slider #arrowLeft:hover,
+.slider #arrowRight:hover {
+  background-color: rgba(212, 163, 115, 0.7);
+  border: 1px solid #d4a373;
+}
+.slider #arrowLeft:nth-child(2),
+.slider #arrowRight:nth-child(2) {
+  right: 40px;
+  left: initial;
+}
+.slider .bullets {
+  width: 150px;
+  height: 44px;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 800;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.slider .bullets div {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: border 100ms;
+  transition: border 100ms;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.slider .bullets div:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #fff;
+}
+.slider .bullets div.selected {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #fff;
 }
 .slider .container {
   height: 90vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 300%;
+  position: relative;
   -webkit-transition: all 1s;
   transition: all 1s;
+}
+.slider .container.position1 {
+  left: 0;
+}
+.slider .container.position2 {
+  left: -100%;
+}
+.slider .container.position3 {
+  left: -200%;
 }
 .slider .container div {
   height: calc(100vh - 48.8px);
