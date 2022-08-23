@@ -52,7 +52,7 @@
     }
   }
   .container {
-    height: 90vh;
+    height: calc(100vh - 48px);
     display: flex;
     position: relative;
     transition: all 1s;

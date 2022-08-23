@@ -126,7 +126,7 @@ nav ul li :hover {
   border: 1px solid #fff;
 }
 .slider .container {
-  height: 90vh;
+  height: calc(100vh - 48px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
