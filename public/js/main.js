@@ -14,6 +14,7 @@
  */
 
 import { sliderOn } from "./slider/slider.js";
+import { scroll } from "./upArrow/arrowUp.js";
 
 /** Run the script -- supposed to be called by the end of the file */
 function onLoad() {
@@ -21,3 +22,4 @@ function onLoad() {
 }
 
 window.onload = onLoad;
+window.onscroll = scroll;

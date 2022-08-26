@@ -60,6 +60,24 @@ nav ul li :hover {
   margin: 0 auto;
 }
 
+#upArrow {
+  opacity: 0;
+  display: none;
+  width: 44px;
+  background-color: #eee;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  z-index: 5000;
+  cursor: pointer;
+  right: 30px;
+  padding: 10px;
+}
+#upArrow:hover {
+  background-color: #ddd;
+}
+
 .slider {
   overflow: hidden;
   position: relative;

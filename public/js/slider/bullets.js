@@ -21,7 +21,6 @@ function makeBullets(count) {
     bullets[i].addEventListener("click", onBulletClick);
   }
   indexOfChild(container.children, "element");
-  console.log;
   return bullets[0];
 }
 
@@ -43,13 +42,9 @@ function onBulletClick(e) {
  * @param {Element|Number} bullet Pass the bullet or it's index to select *—must have property siblings holding it's siblings*
  *  */
 function goToBullet(bullet) {
-  console.log(typeof bullet);
-  console.log(document.querySelectorAll(".bullets *"));
-
   if (typeof bullet === "number") {
     bullet = document.querySelectorAll(".bullets > *")[bullet];
   }
-  console.log(bullet);
   bullet.siblings.forEach((el) => {
     el.classList.remove("selected");
   });
