@@ -13,19 +13,41 @@ function indexOfChild(children, el) {
 }
 
 /**
- * Append n of div to a container if class or src is found
- * @param {Element}container The element to append children to
- * @param {Number}count Number of elements to append
- * @param {String}_class Apply passed string to created div as class *— pass falsy value if you want to pass next parameter only*
- * @param {Element}_child Append passed element to created element
+ * Append count of elements to a container, also can apply an attribute & append a child or array of children
+ * @param {HTMLElement} container The element to append child to
+ * @param {String|HTMLElement} el Tag of element to append — example-: "div" — Can be an html element
+ * @param {String} _attr Apply passed string as attribute (splits by colon) — example-: "class:card" — pass falsy to pass next parameter
+ * @param {Boolean} _bool Attribute is applied to created element — pass falsy to apply to container
+ * @param {HTMLElement|HTMLElement[]} _child Append passed element or array of elements to created element
  *  */
 
-function appendChildren(container, count, _class, _child) {
+function appendChild(container, el, _attr, _bool = 1, _child) {
+  const div = el.constructor === String ? document.createElement(el) : el;
+  if (!!_attr) {
+    const attr = _attr.split(":");
+    if (_bool) {
+      div.setAttribute(attr[0], attr[1]);
+    } else {
+      container.setAttribute(attr[0], attr[1]);
+    }
+  }
+  if (!!_child) {
+    if (_child.constructor === Array) {
+      const children = _child;
+      for (let j = 0; j < children.length; j++) div.appendChild(children[j]);
+    } else div.appendChild(_child);
+  }
+  container.appendChild(div);
+}
+
+/**
+ *
+ * @param {HTMLElement} container
+ * @param {Number} count
+ */
+function appendDivs(container, count) {
   for (let i = 0; i < count; i++) {
-    const div = document.createElement("div");
-    if (!!_class) div.classList.add(_class);
-    if (!!_child) div.appendChild(_child);
-    container.appendChild(div);
+    appendChild(container, "div");
   }
 }
 
@@ -61,4 +83,4 @@ function fadeOut(el, _opacity) {
   el.style.opacity = value;
 }
 
-export { indexOfChild, appendChildren, fadeIn, fadeOut };
+export { indexOfChild, appendChild, appendDivs, fadeIn, fadeOut };

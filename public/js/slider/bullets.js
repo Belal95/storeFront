@@ -1,4 +1,4 @@
-import { appendChildren, indexOfChild } from "../general.js";
+import { appendDivs, indexOfChild } from "../general.js";
 import { goToImage } from "./images.js";
 // Bullets fn
 
@@ -11,7 +11,7 @@ import { goToImage } from "./images.js";
 function makeBullets(count) {
   const container = document.querySelector(".bullets");
 
-  appendChildren(container, count);
+  appendDivs(container, count);
 
   const bullets = document.querySelectorAll(".bullets div");
   for (let i = 0; i < bullets.length; i++) {
