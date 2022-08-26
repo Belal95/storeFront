@@ -1,0 +1,19 @@
+@use "./colors";
+$ySectionMargin: 40px;
+$yMargin: 10px;
+$xMargin: 0;
+// Paddings
+$yBigPadding: 40px;
+$xBigPadding: 20px;
+$ySmallPadding: 10px;
+$xSmallPadding: 5px;
+// Border
+$border: 1px solid colors.$main;
+// Icons width
+$iconWidth: 44px;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+}

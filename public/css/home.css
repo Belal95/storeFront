@@ -126,22 +126,13 @@ nav ul li :hover {
   border: 1px solid #fff;
 }
 .slider .container {
-  height: calc(100vh - 48px);
+  height: calc(100vh - 47px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
   -webkit-transition: all 1s;
   transition: all 1s;
-}
-.slider .container.position1 {
-  left: 0;
-}
-.slider .container.position2 {
-  left: -100%;
-}
-.slider .container.position3 {
-  left: -200%;
 }
 .slider .container div {
   height: calc(100vh - 48.8px);
@@ -163,6 +154,7 @@ nav ul li :hover {
   background: #ccd5ae;
   color: #000;
   padding: 50px 20px;
+  margin-top: -2px;
 }
 .section .container {
   margin: 0 auto;
