@@ -1,0 +1,26 @@
+@use "../../global/colors";
+main {
+  form {
+    padding: 50px 0;
+    .container {
+      display: flex;
+      justify-content: center;
+      // align-items: flex-start;
+      padding: 15px 10px;
+      max-width: 500px;
+      &:not(:last-child) :nth-child(odd) {
+        flex-grow: 1;
+      }
+      &:not(:last-child) :nth-child(even) {
+        flex-grow: 3;
+      }
+      .btn {
+        padding: 10px 20px;
+        background-color: colors.$main;
+        color: colors.$text-alt;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    }
+  }
+}
