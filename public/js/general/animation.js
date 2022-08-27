@@ -4,17 +4,19 @@
  * @param {Number} _opacity is passed when the function is called recursively
  */
 
-export function fadeIn(el, _opacity) {
-  el.style.display = "block";
-  /** Value of opacity to Fade From */
-  let value = _opacity || 0;
-  if (value < 1) {
-    value += 0.01;
-    setTimeout(function () {
-      fadeIn(el, value);
-    }, 1);
+export function fadeIn(el, _opacity, _looped) {
+  if (el.style.display !== "block" || _looped) {
+    el.style.display = "block";
+    /** Value of opacity to Fade From */
+    let value = _opacity || 0;
+    if (value < 1) {
+      value += 0.01;
+      setTimeout(function () {
+        fadeIn(el, value, 1);
+      }, 1);
+    }
+    el.style.opacity = value;
   }
-  el.style.opacity = value;
 }
 
 /**
@@ -23,16 +25,18 @@ export function fadeIn(el, _opacity) {
  * @param {Number} _opacity is passed when the function is called recursively
  */
 
-export function fadeOut(el, _opacity) {
+export function fadeOut(el, _opacity, _looped) {
   /** Value of opacity to shrink Fade from */
-  let value = _opacity || 1;
-  if (value > 0) {
-    value -= 0.01;
-    setTimeout(function () {
-      fadeOut(el, value);
-    }, 1);
-  } else el.style.display = "none";
-  el.style.opacity = value;
+  if (el.style.display !== "none" || _looped) {
+    let value = _opacity || 1;
+    if (value > 0) {
+      value -= 0.01;
+      setTimeout(function () {
+        fadeOut(el, value, 1);
+      }, 1);
+    } else el.style.display = "none";
+    el.style.opacity = value;
+  }
 }
 
 /**
@@ -48,15 +52,17 @@ export function fadeOut(el, _opacity) {
  */
 
 export function shrink(item, scale) {
-  if (scale > 0) {
-    scale -= 0.01;
-    setTimeout(function () {
-      shrink(item, scale);
-    }, 2);
-  } else {
-    item.style.display = "none";
+  if (item.style.display !== "none") {
+    if (scale > 0) {
+      scale -= 0.01;
+      setTimeout(function () {
+        shrink(item, scale);
+      }, 2);
+    } else {
+      item.style.display = "none";
+    }
+    item.style.transform = `scale(${scale})`;
   }
-  item.style.transform = `scale(${scale})`;
 }
 
 /**
@@ -66,12 +72,14 @@ export function shrink(item, scale) {
  */
 
 export function enlarge(item, scale) {
-  item.style.display = "block";
-  if (scale < 1) {
-    scale += 0.01;
-    setTimeout(function () {
-      enlarge(item, scale);
-    }, 2);
+  if (item.style.display !== "block") {
+    item.style.display = "block";
+    if (scale < 1) {
+      scale += 0.01;
+      setTimeout(function () {
+        enlarge(item, scale);
+      }, 2);
+    }
+    item.style.transform = `scale(${scale})`;
   }
-  item.style.transform = `scale(${scale})`;
 }
