@@ -1,61 +1,89 @@
-import { appendChild } from "../general.js";
-import { addToCart } from "./buttons.js";
+import { appendChild } from "../general/manipulation.js";
+import { addToCartOnClick } from "./buttons.js";
 import { selectCategory } from "./categories.js";
-/**
- * An object to hold all the item data
- * @param {String} title Item title
- * @param {String} description Item descriptions
- * @param {String} category Item category
- * @param {Number} id Item id
- */
-function Card(title, description, category, id) {
-  /** @type HTMLDivElement*/
-  this.element = (function makeCard(
-    t = title,
-    d = description,
-    c = category,
-    i = id
-  ) {
-    const imgHolder = document.createElement("div");
-    const text = document.createElement("div");
-    const btn = document.createElement("div");
-    const h4Text = document.createTextNode(t);
-    const pText = document.createTextNode(d);
-    const btnText = document.createTextNode("Add to cart");
-    const card = document.createElement("div");
+import { Item } from "./item.js";
 
-    card.classList.add("card");
-    appendChild(imgHolder, "img", `src:./images/${c}_${i}.jpg`);
-    appendChild(text, "h4", "class:text", 0, h4Text);
-    appendChild(text, "p", 0, 0, pText);
-    appendChild(card, imgHolder, "class:imgHolder");
-    appendChild(card, text, `category:${c}`, 0);
-    appendChild(btn, btnText, `index:${i}`, 0);
-    appendChild(text, btn, "class:btn");
-    return card;
-  })();
-}
+/**
+ * Fires the shop function & listeners
+ */
 
 export function makeShop() {
-  addCards();
-  addToCart();
+  addCards(6);
+  addToCartOnClick();
   selectCategory();
 }
-function addCards() {
+
+/**
+ * Takes the item data and return a card element with all the data appended
+ * @param {String} title Card title
+ * @param {String} description Card descriptions
+ * @param {String} category Card category
+ * @param {Number} id Card index
+ * @return {HTMLDivElement} Div with card as class & category as category attribute and all the items data appended
+ */
+
+export function makeCard(title, description, category, id) {
+  /** Div holding image */
+  const imgHolder = document.createElement("div");
+  /** Div holding text & button */
+  const text = document.createElement("div");
+  /** Div as add to cart button */
+  const btn = document.createElement("div");
+  /** Product title text node */
+  const h4Text = document.createTextNode(title);
+  /**  Product description text node */
+  const pText = document.createTextNode(description);
+  /**  Add to cart text node */
+  const btnText = document.createTextNode("Add to cart");
+  /**  Container for all Elements */
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  /**Append img with it's src to image holder div */
+  appendChild(imgHolder, "img", `src:./images/${category}_${id}.jpg`);
+  /**Append title to h4 and the h4 to text holder and give text holder */
+  appendChild(text, "h4", "class:text", 0, h4Text);
+  /** Append description to p and the p to text div */
+  appendChild(text, "p", 0, 0, pText);
+  /** Append image holder to card */
+  appendChild(card, imgHolder, "class:imgHolder");
+  /** Append text holder to card and give the card the attribute category */
+  appendChild(card, text, `category:${category}`, 0);
+  /** Append text to button and give the button the attribute index */
+  appendChild(btn, btnText, `index:${id}`, 0);
+  /** Append btn to text holder */
+  appendChild(text, btn, "class:btn");
+  return card;
+}
+
+/**
+ * Add all the cards to the items section
+ * @param {Number} count Number of cards is 3 times the count — one time for each category
+ */
+
+function addCards(count) {
+  /** Cards container */
   const items = document.getElementById("items");
-  makeCards(6).forEach(function (el) {
-    items.appendChild(el.element);
+  makeCards(count).forEach(function (item) {
+    items.appendChild(item.card);
   });
 }
 
+/**
+ * Make cards the cards
+ * @param {Number} count Number of cards is 3 times of count — one time for each category
+ */
+
 function makeCards(count) {
+  /** Array of cards */
   let cards = [];
+  /** Default text */
   const text =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus qui delectus eligendi officia quisquam. Odit, necessitatibus id. Iure quos unde ipsa adipisci?";
   for (let i = 1; i <= count; i++) {
-    const woman = new Card(`Women item`, text, "women", i);
-    const man = new Card(`Men item`, text, "men", i);
-    const kid = new Card(`Kids item`, text, "kids", i);
+    const woman = new Item(`Women item`, text, "women", i);
+    const man = new Item(`Men item`, text, "men", i);
+    const kid = new Item(`Kids item`, text, "kids", i);
     cards.push(woman);
     cards.push(man);
     cards.push(kid);

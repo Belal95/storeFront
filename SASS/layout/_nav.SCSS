@@ -18,15 +18,30 @@ nav {
       height: 100%;
       a {
         height: 100%;
-        padding: 15px 20px;
+        padding: 10px 0;
         color: colors.$alt;
         display: flex;
         justify-content: center;
         align-items: center;
         text-decoration: none;
         transition: transform 80ms;
+        position: relative;
+      }
+      &:last-child {
         svg {
           max-height: 100%;
+        }
+        #cart {
+          display: none;
+          position: absolute;
+          font-size: 10px;
+          top: 75%;
+          left: 63%;
+          transform: translate(-63%, -75%);
+          padding: 4px;
+          background-color: blue;
+          color: #fff;
+          border-radius: 50%;
         }
       }
       :hover {

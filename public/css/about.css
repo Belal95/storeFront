@@ -36,7 +36,7 @@ nav ul li {
 
 nav ul li a {
   height: 100%;
-  padding: 15px 20px;
+  padding: 10px 0;
   color: #fefae0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -52,10 +52,25 @@ nav ul li a {
   transition: -webkit-transform 80ms;
   transition: transform 80ms;
   transition: transform 80ms, -webkit-transform 80ms;
+  position: relative;
 }
 
-nav ul li a svg {
+nav ul li:last-child svg {
   max-height: 100%;
+}
+
+nav ul li:last-child #cart {
+  display: none;
+  position: absolute;
+  font-size: 10px;
+  top: 75%;
+  left: 63%;
+  -webkit-transform: translate(-63%, -75%);
+          transform: translate(-63%, -75%);
+  padding: 4px;
+  background-color: blue;
+  color: #fff;
+  border-radius: 50%;
 }
 
 nav ul li :hover {

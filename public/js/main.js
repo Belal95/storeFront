@@ -18,8 +18,10 @@
 import { scroll } from "./upArrow/arrowUp.js";
 import { sliderOn } from "./slider/slider.js";
 import { makeShop } from "./shop/card.js";
+import { updateCart } from "./shop/cart.js";
 /** Run the script */
 function onLoad() {
+  updateCart();
   sliderOn();
   makeShop();
 }

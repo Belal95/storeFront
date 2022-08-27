@@ -1,12 +1,12 @@
-console.log(localStorage.getItem("items"));
-let counter;
-export function addToCart() {
+import { addToCart } from "./cart.js";
+
+/**
+ * Add event listener to the buttons so when clicked it adds one to the counter
+ */
+
+export function addToCartOnClick() {
   const buttons = document.querySelectorAll("#items .btn");
   buttons.forEach(function (btn) {
-    btn.addEventListener("click", add);
+    btn.addEventListener("click", addToCart);
   });
-}
-function add() {
-  localStorage.setItem("items", Number(localStorage.getItem("items")) + 1);
-  updateCart();
 }
