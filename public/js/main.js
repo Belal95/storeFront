@@ -1,13 +1,9 @@
-"use strict";
+// "use strict";
 /**
- * ! DON't Work on this project now !!! finnish the jQuery project first!!
- * TODO: Add catagories
- * TODO: Add Cart with a counter
  * TODO: Validate Contact us Form with regex
  * TODO: Beautify css
  * TODO: Hide nav when footer enter the view
  * TODO: Add cart page with added items
- * TODO: Do a zoom in & out animation  - transform origin left top  - scale to 0 - display none - reverse
  * TODO:
  */
 
@@ -19,12 +15,44 @@ import { scroll } from "./upArrow/arrowUp.js";
 import { sliderOn } from "./slider/slider.js";
 import { makeShop } from "./shop/card.js";
 import { updateCart } from "./shop/cart.js";
-/** Run the script */
+window.onload = onLoad;
+
+/**
+ * Fires the scripts depending on the file
+ */
 function onLoad() {
+  window.onscroll = scroll;
+  const path = getFileName();
+  console.log(path);
+  if (path == "index") onLoadHome();
+  if (path == "about") onLoadAbout();
+  if (path == "contact") onLoadContact();
+}
+
+/**
+ * Gets the current name of the opened file(page)
+ * @returns The name of opened file
+ */
+function getFileName() {
+  let path = window.location.pathname;
+  path = path.split("/");
+  path = path[path.length - 1].split(".")[0];
+  return path;
+}
+
+/** Run the script for home page */
+function onLoadHome() {
   updateCart();
   sliderOn();
   makeShop();
 }
 
-window.onload = onLoad;
-window.onscroll = scroll;
+/** Run the script for about page */
+function onLoadAbout() {
+  updateCart();
+}
+
+/** Run the script for contact page */
+function onLoadContact() {
+  updateCart();
+}

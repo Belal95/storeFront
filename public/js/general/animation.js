@@ -6,6 +6,7 @@
 
 export function fadeIn(el, _opacity) {
   el.style.display = "block";
+  /** Value of opacity to Fade From */
   let value = _opacity || 0;
   if (value < 1) {
     value += 0.01;
@@ -23,6 +24,7 @@ export function fadeIn(el, _opacity) {
  */
 
 export function fadeOut(el, _opacity) {
+  /** Value of opacity to shrink Fade from */
   let value = _opacity || 1;
   if (value > 0) {
     value -= 0.01;
@@ -32,6 +34,18 @@ export function fadeOut(el, _opacity) {
   } else el.style.display = "none";
   el.style.opacity = value;
 }
+
+/**
+ * TODO: Add transform origin variable
+ * TODO: Try to remove passing 1 or 0 for shrink
+ * TODO: Try make the animation be depending on width not scale
+ */
+
+/**
+ * Scale element down then set display to none
+ * @param {HTMLElement} item Element to shrink to oblivion
+ * @param {Number} scale Pass 1 — That is the start point
+ */
 
 export function shrink(item, scale) {
   if (scale > 0) {
@@ -44,6 +58,13 @@ export function shrink(item, scale) {
   }
   item.style.transform = `scale(${scale})`;
 }
+
+/**
+ * Scale element down then set display to none
+ * @param {HTMLElement} item Element to shrink to oblivion
+ * @param {Number} scale Pass 1 — That is the start point
+ */
+
 export function enlarge(item, scale) {
   item.style.display = "block";
   if (scale < 1) {

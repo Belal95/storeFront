@@ -1,7 +1,5 @@
 import { goLeft, goRight } from "./images.js";
 
-// Arrows fn
-
 /** Creates the slider left amd right arrows & adds the click event listener */
 
 export function makeArrows() {
