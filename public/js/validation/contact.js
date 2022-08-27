@@ -6,6 +6,13 @@ import {
   checkPhone,
 } from "./validation.js";
 
+const form = {
+  uName: document.getElementById("uName"),
+  email: document.getElementById("email"),
+  phone: document.getElementById("phone"),
+  message: document.getElementById("message"),
+};
+
 /**
  * Fires validation functions and listeners
  */
