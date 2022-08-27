@@ -15,6 +15,7 @@ import { scroll } from "./upArrow/arrowUp.js";
 import { sliderOn } from "./slider/slider.js";
 import { makeShop } from "./shop/card.js";
 import { updateCart } from "./shop/cart.js";
+import { validationOn } from "./validation/contact.js";
 window.onload = onLoad;
 
 /**
@@ -23,7 +24,6 @@ window.onload = onLoad;
 function onLoad() {
   window.onscroll = scroll;
   const path = getFileName();
-  console.log(path);
   if (path == "index") onLoadHome();
   if (path == "about") onLoadAbout();
   if (path == "contact") onLoadContact();
@@ -55,4 +55,5 @@ function onLoadAbout() {
 /** Run the script for contact page */
 function onLoadContact() {
   updateCart();
+  validationOn();
 }
