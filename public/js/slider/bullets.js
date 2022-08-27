@@ -1,6 +1,6 @@
-import { appendDiv, indexOfChild } from "../general.js";
+import { indexOfChild } from "../general/search.js";
+import { appendDiv } from "../general/manipulation.js";
 import { goToImage } from "./images.js";
-// Bullets fn
 
 /**
  * Create the slider bullets & add the click events to them

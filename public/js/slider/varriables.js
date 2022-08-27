@@ -23,5 +23,3 @@ const sliderImgsCount = document.querySelectorAll("#slider > div").length;
  */
 
 let sliderCounter = 0;
-
-// export { slider, sliderView, sliderImgsCount, sliderCounter };
