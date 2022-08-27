@@ -52,19 +52,11 @@
     }
   }
   .container {
-    height: calc(100vh - 48px);
+    height: calc(100vh - 47px);
     display: flex;
     position: relative;
     transition: all 1s;
-    &.position1 {
-      left: 0;
-    }
-    &.position2 {
-      left: -100%;
-    }
-    &.position3 {
-      left: -200%;
-    }
+    max-width: none;
     div {
       height: calc(100vh - 48.8px);
       width: 33.33%;

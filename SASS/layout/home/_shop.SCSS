@@ -1,9 +1,9 @@
 .shop {
-  margin-top: 50px;
+  padding: 50px 0;
   .container {
-    display: grid;
-    grid-template-columns: 20% 80%;
     .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       p {
         box-sizing: border-box;
         appearance: none;
@@ -35,24 +35,33 @@
       }
     }
     .items {
+      padding-top: 20px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-rows: repeat(auto-fill, 400px);
+      position: relative;
       gap: 20px;
       .card {
         border: 1px solid #efefef;
+        transform-origin: top left;
         border-radius: 25px;
         width: 100%;
         overflow: hidden;
         position: relative;
+        transition: all 300ms;
+        &:hover {
+          transform: translateY(-10px);
+        }
         &:hover img {
           transform: scale(1.2) rotate(5deg);
           opacity: 0.8;
         }
-        &:hover .text p {
-        }
         img {
+          display: block;
+          object-fit: contain;
           transition: all 500ms;
-          width: 100%;
+          max-height: 120%;
+          max-width: 120%;
           transform: scale(1.1);
         }
         .text {

@@ -12,16 +12,37 @@ nav {
     align-items: center;
     flex-wrap: wrap;
     list-style: none;
+    height: 44px;
     li {
       flex-grow: 1;
+      height: 100%;
       a {
-        padding: 15px 20px;
+        height: 100%;
+        padding: 10px 0;
         color: colors.$alt;
         display: flex;
         justify-content: center;
         align-items: center;
         text-decoration: none;
         transition: transform 80ms;
+        position: relative;
+      }
+      &:last-child {
+        svg {
+          max-height: 100%;
+        }
+        #cart {
+          display: none;
+          position: absolute;
+          font-size: 10px;
+          top: 75%;
+          left: 63%;
+          transform: translate(-63%, -75%);
+          padding: 4px;
+          background-color: blue;
+          color: #fff;
+          border-radius: 50%;
+        }
       }
       :hover {
         color: #faedcd;

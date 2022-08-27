@@ -5,7 +5,7 @@
 }
 
 .nav {
-  background-color: #d4a373;
+  background-color: #795548;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -24,14 +24,17 @@ nav ul {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   list-style: none;
+  height: 44px;
 }
 nav ul li {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  height: 100%;
 }
 nav ul li a {
-  padding: 15px 20px;
+  height: 100%;
+  padding: 10px 0;
   color: #fefae0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,17 +50,51 @@ nav ul li a {
   transition: -webkit-transform 80ms;
   transition: transform 80ms;
   transition: transform 80ms, -webkit-transform 80ms;
+  position: relative;
+}
+nav ul li:last-child svg {
+  max-height: 100%;
+}
+nav ul li:last-child #cart {
+  display: none;
+  position: absolute;
+  font-size: 10px;
+  top: 75%;
+  left: 63%;
+  -webkit-transform: translate(-63%, -75%);
+          transform: translate(-63%, -75%);
+  padding: 4px;
+  background-color: blue;
+  color: #fff;
+  border-radius: 50%;
 }
 nav ul li :hover {
   color: #faedcd;
-  background-color: #d7aa7d;
+  background-color: rgb(255, 142, 66);
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
 
 .container {
-  width: 1170px;
+  max-width: 1170px;
   margin: 0 auto;
+}
+#upArrow {
+  opacity: 0;
+  display: none;
+  width: 44px;
+  background-color: #eee;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  z-index: 5000;
+  cursor: pointer;
+  right: 30px;
+  padding: 10px;
+}
+#upArrow:hover {
+  background-color: #ddd;
 }
 
 .slider {
@@ -77,12 +114,12 @@ nav ul li :hover {
   border-radius: 44%;
   padding: 10px;
   cursor: pointer;
-  background-color: rgba(212, 163, 115, 0.5);
+  background-color: rgba(121, 85, 72, 0.5);
 }
 .slider #arrowLeft:hover,
 .slider #arrowRight:hover {
-  background-color: rgba(212, 163, 115, 0.7);
-  border: 1px solid #d4a373;
+  background-color: rgba(121, 85, 72, 0.7);
+  border: 1px solid #795548;
 }
 .slider #arrowLeft:nth-child(2),
 .slider #arrowRight:nth-child(2) {
@@ -126,22 +163,14 @@ nav ul li :hover {
   border: 1px solid #fff;
 }
 .slider .container {
-  height: calc(100vh - 48px);
+  height: calc(100vh - 47px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
   -webkit-transition: all 1s;
   transition: all 1s;
-}
-.slider .container.position1 {
-  left: 0;
-}
-.slider .container.position2 {
-  left: -100%;
-}
-.slider .container.position3 {
-  left: -200%;
+  max-width: none;
 }
 .slider .container div {
   height: calc(100vh - 48.8px);
@@ -163,6 +192,7 @@ nav ul li :hover {
   background: #ccd5ae;
   color: #000;
   padding: 50px 20px;
+  margin-top: -2px;
 }
 .section .container {
   margin: 0 auto;
@@ -173,11 +203,11 @@ nav ul li :hover {
 }
 
 .shop {
-  margin-top: 50px;
+  padding: 50px 0;
 }
-.shop .container {
+.shop .container .categories {
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 .shop .container .categories p {
   -webkit-box-sizing: border-box;
@@ -216,16 +246,27 @@ nav ul li :hover {
           box-shadow: 0 0 40px 40px red inset;
 }
 .shop .container .items {
+  padding-top: 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-rows: repeat(auto-fill, 400px);
+  position: relative;
   gap: 20px;
 }
 .shop .container .items .card {
   border: 1px solid #efefef;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
   border-radius: 25px;
   width: 100%;
   overflow: hidden;
   position: relative;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+.shop .container .items .card:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 .shop .container .items .card:hover img {
   -webkit-transform: scale(1.2) rotate(5deg);
@@ -233,9 +274,13 @@ nav ul li :hover {
   opacity: 0.8;
 }
 .shop .container .items .card img {
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
   -webkit-transition: all 500ms;
   transition: all 500ms;
-  width: 100%;
+  max-height: 120%;
+  max-width: 120%;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -268,8 +313,7 @@ nav ul li :hover {
 }
 
 footer {
-  background-color: #d4a373;
-  margin-top: 50px;
+  background-color: #795548;
   padding: 40px 0;
 }
 footer .container {

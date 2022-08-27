@@ -1,0 +1,19 @@
+@use "../../global/colors";
+main {
+  > .container-fluid {
+    padding: 25px 15px;
+    &:nth-child(odd) {
+      background-color: rgba($color: colors.$main, $alpha: 0.85);
+      color: #fff;
+    }
+    &:nth-child(even) {
+      background-color: #ebebeb;
+    }
+    h2 {
+      padding: 10px 0;
+    }
+    P {
+      padding: 4px 0;
+    }
+  }
+}
