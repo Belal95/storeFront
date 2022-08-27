@@ -24,13 +24,16 @@ nav ul {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   list-style: none;
+  height: 44px;
 }
 nav ul li {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  height: 100%;
 }
 nav ul li a {
+  height: 100%;
   padding: 15px 20px;
   color: #fefae0;
   display: -webkit-box;
@@ -48,6 +51,9 @@ nav ul li a {
   transition: transform 80ms;
   transition: transform 80ms, -webkit-transform 80ms;
 }
+nav ul li a svg {
+  max-height: 100%;
+}
 nav ul li :hover {
   color: #faedcd;
   background-color: #d7aa7d;
@@ -56,10 +62,9 @@ nav ul li :hover {
 }
 
 .container {
-  width: 1170px;
+  max-width: 1170px;
   margin: 0 auto;
 }
-
 #upArrow {
   opacity: 0;
   display: none;
@@ -151,6 +156,7 @@ nav ul li :hover {
   position: relative;
   -webkit-transition: all 1s;
   transition: all 1s;
+  max-width: none;
 }
 .slider .container div {
   height: calc(100vh - 48.8px);
@@ -185,9 +191,9 @@ nav ul li :hover {
 .shop {
   margin-top: 50px;
 }
-.shop .container {
+.shop .container .categories {
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 .shop .container .categories p {
   -webkit-box-sizing: border-box;
@@ -227,15 +233,25 @@ nav ul li :hover {
 }
 .shop .container .items {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-rows: repeat(auto-fill, 400px);
+  position: relative;
   gap: 20px;
 }
 .shop .container .items .card {
   border: 1px solid #efefef;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
   border-radius: 25px;
   width: 100%;
   overflow: hidden;
   position: relative;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+.shop .container .items .card:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 .shop .container .items .card:hover img {
   -webkit-transform: scale(1.2) rotate(5deg);
@@ -243,9 +259,13 @@ nav ul li :hover {
   opacity: 0.8;
 }
 .shop .container .items .card img {
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
   -webkit-transition: all 500ms;
   transition: all 500ms;
-  width: 100%;
+  max-height: 120%;
+  max-width: 120%;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }

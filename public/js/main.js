@@ -1,7 +1,6 @@
 "use strict";
 /**
  * ! DON't Work on this project now !!! finnish the jQuery project first!!
- * TODO: Make the Cards added dynamically
  * TODO: Add catagories
  * TODO: Add Cart with a counter
  * TODO: Validate Contact us Form with regex
@@ -18,11 +17,11 @@
 
 import { scroll } from "./upArrow/arrowUp.js";
 import { sliderOn } from "./slider/slider.js";
-import { test } from "./shop/card.js";
+import { makeShop } from "./shop/card.js";
 /** Run the script */
 function onLoad() {
   sliderOn();
-  test();
+  makeShop();
 }
 
 window.onload = onLoad;

@@ -24,15 +24,18 @@ nav ul {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   list-style: none;
+  height: 44px;
 }
 
 nav ul li {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  height: 100%;
 }
 
 nav ul li a {
+  height: 100%;
   padding: 15px 20px;
   color: #fefae0;
   display: -webkit-box;
@@ -51,6 +54,10 @@ nav ul li a {
   transition: transform 80ms, -webkit-transform 80ms;
 }
 
+nav ul li a svg {
+  max-height: 100%;
+}
+
 nav ul li :hover {
   color: #faedcd;
   background-color: #d7aa7d;
@@ -59,6 +66,6 @@ nav ul li :hover {
 }
 
 .container {
-  width: 1170px;
+  max-width: 1170px;
   margin: 0 auto;
 }

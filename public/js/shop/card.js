@@ -1,57 +1,61 @@
-import { appendDivs, appendChild } from "../general.js";
+import { appendChild } from "../general.js";
+import { addToCart } from "./buttons.js";
+import { selectCategory } from "./categories.js";
+/**
+ * An object to hold all the item data
+ * @param {String} title Item title
+ * @param {String} description Item descriptions
+ * @param {String} category Item category
+ * @param {Number} id Item id
+ */
+function Card(title, description, category, id) {
+  /** @type HTMLDivElement*/
+  this.element = (function makeCard(
+    t = title,
+    d = description,
+    c = category,
+    i = id
+  ) {
+    const imgHolder = document.createElement("div");
+    const text = document.createElement("div");
+    const btn = document.createElement("div");
+    const h4Text = document.createTextNode(t);
+    const pText = document.createTextNode(d);
+    const btnText = document.createTextNode("Add to cart");
+    const card = document.createElement("div");
 
-function Card(title, paragraph, category, id) {
-  this.makeCard = makeCard(title, paragraph, category, id);
+    card.classList.add("card");
+    appendChild(imgHolder, "img", `src:./images/${c}_${i}.jpg`);
+    appendChild(text, "h4", "class:text", 0, h4Text);
+    appendChild(text, "p", 0, 0, pText);
+    appendChild(card, imgHolder, "class:imgHolder");
+    appendChild(card, text, `category:${c}`, 0);
+    appendChild(btn, btnText, `index:${i}`, 0);
+    appendChild(text, btn, "class:btn");
+    return card;
+  })();
 }
 
-export function test() {
+export function makeShop() {
+  addCards();
+  addToCart();
+  selectCategory();
+}
+function addCards() {
   const items = document.getElementById("items");
   makeCards(6).forEach(function (el) {
-    items.appendChild(el.makeCard);
+    items.appendChild(el.element);
   });
-}
-
-function makeCard(title, paragraph, category, id) {
-  const imgHolder = document.createElement("div");
-  const text = document.createElement("div");
-  const btn = document.createElement("div");
-  const h4Text = document.createTextNode(title);
-  const pText = document.createTextNode(paragraph);
-  const btnText = document.createTextNode("Add to cart");
-  const card = document.createElement("div");
-
-  card.classList.add("card");
-  appendChild(imgHolder, "img", `src:./images/${category}_${id}.jpg`);
-  appendChild(text, "h4", "class:text", 0, h4Text);
-  appendChild(text, "p", 0, 0, pText);
-  appendChild(card, imgHolder, "class:imgHolder");
-  appendChild(card, text, `category:${category}`, 0);
-  appendChild(btn, btnText, `number:${id}`, 0);
-  appendChild(card, btn, "class:btn");
-  return card;
 }
 
 function makeCards(count) {
   let cards = [];
+  const text =
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus qui delectus eligendi officia quisquam. Odit, necessitatibus id. Iure quos unde ipsa adipisci?";
   for (let i = 1; i <= count; i++) {
-    const woman = new Card(
-      `Women item`,
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus qui delectus eligendi officia quisquam. Odit, necessitatibus id. Iure quos unde ipsa adipisci?",
-      "women",
-      i
-    );
-    const man = new Card(
-      `Men item`,
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus qui delectus eligendi officia quisquam. Odit, necessitatibus id. Iure quos unde ipsa adipisci?",
-      "men",
-      i
-    );
-    const kid = new Card(
-      `Kids item`,
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus qui delectus eligendi officia quisquam. Odit, necessitatibus id. Iure quos unde ipsa adipisci?",
-      "kids",
-      i
-    );
+    const woman = new Card(`Women item`, text, "women", i);
+    const man = new Card(`Men item`, text, "men", i);
+    const kid = new Card(`Kids item`, text, "kids", i);
     cards.push(woman);
     cards.push(man);
     cards.push(kid);

@@ -12,9 +12,12 @@ nav {
     align-items: center;
     flex-wrap: wrap;
     list-style: none;
+    height: 44px;
     li {
       flex-grow: 1;
+      height: 100%;
       a {
+        height: 100%;
         padding: 15px 20px;
         color: colors.$alt;
         display: flex;
@@ -22,6 +25,9 @@ nav {
         align-items: center;
         text-decoration: none;
         transition: transform 80ms;
+        svg {
+          max-height: 100%;
+        }
       }
       :hover {
         color: #faedcd;

@@ -41,11 +41,11 @@ function appendChild(container, el, _attr, _bool = 1, _child) {
 }
 
 /**
- *
- * @param {HTMLElement} container
- * @param {Number} count
+ * Append number of divisions in an element
+ * @param {HTMLElement} container  Container to append children to
+ * @param {Number} count Count of divisions to append
  */
-function appendDivs(container, count) {
+function appendDiv(container, count) {
   for (let i = 0; i < count; i++) {
     appendChild(container, "div");
   }
@@ -83,4 +83,34 @@ function fadeOut(el, _opacity) {
   el.style.opacity = value;
 }
 
-export { indexOfChild, appendChild, appendDivs, fadeIn, fadeOut };
+function shrink(item, scale) {
+  if (scale > 0) {
+    scale -= 0.01;
+    setTimeout(function () {
+      shrink(item, scale);
+    }, 2);
+  } else {
+    item.style.display = "none";
+  }
+  item.style.transform = `scale(${scale})`;
+}
+function enlarge(item, scale) {
+  item.style.display = "block";
+  if (scale < 1) {
+    scale += 0.01;
+    setTimeout(function () {
+      enlarge(item, scale);
+    }, 2);
+  }
+  item.style.transform = `scale(${scale})`;
+}
+
+export {
+  indexOfChild,
+  appendChild,
+  appendDiv,
+  fadeIn,
+  fadeOut,
+  shrink,
+  enlarge,
+};

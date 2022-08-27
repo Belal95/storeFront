@@ -1,7 +1,13 @@
 @use "./global/globalRules";
 @use "./layout/nav";
-
+$medium: "1190px";
+$small: "980px";
 .container {
-  width: 1170px;
+  max-width: 1170px;
   margin: 0 auto;
+  @media screen and (max-width: $medium) {
+    // width: 960px;
+  }
+  @media screen and (max-width: $small) {
+  }
 }

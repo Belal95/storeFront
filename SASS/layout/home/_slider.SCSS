@@ -56,6 +56,7 @@
     display: flex;
     position: relative;
     transition: all 1s;
+    max-width: none;
     div {
       height: calc(100vh - 48.8px);
       width: 33.33%;
