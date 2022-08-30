@@ -1,9 +1,9 @@
 // "use strict";
 /**
- * TODO: Validate Contact us Form with regex
  * TODO: Beautify css
  * TODO: Hide nav when footer enter the view
  * TODO: Add cart page with added items
+ * TODO: Make better animation depending on width
  * TODO:
  */
 
@@ -11,7 +11,7 @@
  * @author Belal Mahmoud
  */
 
-import { scroll } from "./upArrow/arrowUp.js";
+import { scrollOn } from "./upArrow/arrowUp.js";
 import { sliderOn } from "./slider/slider.js";
 import { makeShop } from "./shop/card.js";
 import { updateCart } from "./shop/cart.js";
@@ -22,7 +22,7 @@ window.onload = onLoad;
  * Fires the scripts depending on the file
  */
 function onLoad() {
-  window.onscroll = scroll;
+  scrollOn;
   const path = getFileName();
   if (path == "index") onLoadHome();
   if (path == "about") onLoadAbout();
