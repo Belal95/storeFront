@@ -1,4 +1,24 @@
-import { widthUp, widthDown } from "../../helpers/animation.js";
+import {
+  widthUp,
+  widthDown,
+  show,
+  hide,
+  fadeIn,
+} from "../../helpers/animation.js";
+
+const loader = document.getElementById("loading");
+const itemsHolder = document.getElementById("items");
+console.log();
+/**
+ * hide the loader and show the items
+ * @param {Number} hideLoader pass timeout
+ */
+export function hideLoader(_time = 0) {
+  window.setTimeout(() => {
+    hide(loader);
+    show(itemsHolder);
+  }, _time);
+}
 
 /** Categories buttons */
 const btns = document.querySelectorAll(".categories p");
@@ -8,9 +28,11 @@ const btns = document.querySelectorAll(".categories p");
 
 export function selectCategory() {
   /** Select all the items */
-  const allItems = document.querySelectorAll("#items > .card");
+  const allItems = itemsHolder.children;
   btns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
+      hide(itemsHolder);
+      show(loader);
       /** The selected category */
       const category = e.target.getAttribute("category");
       /** The selected items from that category */
@@ -22,11 +44,12 @@ export function selectCategory() {
         (key) => ![...selectedItems].includes(key)
       );
       outItems.forEach((item) => {
-        widthDown(item);
+        hide(item);
       });
       selectedItems.forEach((item) => {
-        widthUp(item);
+        show(item);
       });
+      hideLoader(500);
     });
   });
 }

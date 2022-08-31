@@ -4,6 +4,30 @@
  * @param {Number} _opacity is passed when the function is called recursively
  */
 
+export function hide(el) {
+  if (el.style.display !== "none") {
+    el.style.display = "none";
+  }
+}
+
+/**
+ * Change the opacity of an element from 1 to 0 in 100ms
+ * @param {Element} el the element to fade out
+ * @param {Number} _opacity is passed when the function is called recursively
+ */
+
+export function show(el, _opacity, _looped) {
+  /** Value of opacity to shrink Fade from */
+  if (el.style.display !== "flex") {
+    el.style.display = "flex";
+  }
+}
+/**
+ * Change the opacity of an element from 0 to 1 in 100ms
+ * @param {Element} el the element to fade in
+ * @param {Number} _opacity is passed when the function is called recursively
+ */
+
 export function fadeIn(el, _opacity, _looped) {
   if (el.style.display !== "block" || _looped) {
     el.style.display = "block";
