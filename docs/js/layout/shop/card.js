@@ -1,7 +1,7 @@
 import { appendChild } from "../../helpers/manipulation.js";
 import { addToCartOnClick } from "./buttons.js";
 import { selectCategory } from "./categories.js";
-import { Item } from "./item.js.js";
+import { Item } from "./item.js";
 
 /**
  * Fires the shop function & listeners
