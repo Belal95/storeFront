@@ -15,6 +15,7 @@ import { sliderOn } from "./layout/slider/slider.js";
 import { makeShop } from "./layout/shop/card.js";
 import { updateCart } from "./layout/shop/cart.js";
 import { validationOn } from "./validation/contact.js";
+import { hideLoader } from "./layout/shop/categories.js";
 window.onload = onLoad;
 
 /**
@@ -41,6 +42,7 @@ function getFileName() {
 
 /** Run the script for home page */
 function onLoadHome() {
+  hideLoader(3000);
   updateCart();
   sliderOn();
   makeShop();
