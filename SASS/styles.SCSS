@@ -1,6 +1,9 @@
 @use "./main";
+@use "./layout/loading";
 @use "./layout/upArrow";
 @use "./layout/home/slider";
 @use "./layout/home/section";
 @use "./layout/home/shop";
+@use "./layout/about/about";
+@use "./layout/contact/contact";
 @use "./layout/footer";

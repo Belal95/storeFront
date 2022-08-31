@@ -1,8 +1,7 @@
-import { enlarge, shrink } from "../general/animation.js";
+import { widthUp, widthDown } from "../../helpers/animation.js";
 
 /** Categories buttons */
 const btns = document.querySelectorAll(".categories p");
-
 /**
  * Hide all the cards and only show the selected category cards
  */
@@ -18,15 +17,15 @@ export function selectCategory() {
       const selectedItems = document.querySelectorAll(
         `#items div[category="${category}"]`
       );
-      /** Subtraction of selected items all the items  */
+      /** Subtraction of selected items from all the items  */
       let outItems = [...allItems].filter(
         (key) => ![...selectedItems].includes(key)
       );
       outItems.forEach((item) => {
-        shrink(item, 1);
+        widthDown(item);
       });
       selectedItems.forEach((item) => {
-        enlarge(item, 0);
+        widthUp(item);
       });
     });
   });
