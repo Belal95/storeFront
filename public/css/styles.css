@@ -349,11 +349,7 @@ nav ul li :hover {
   padding: 5px 10px;
   cursor: pointer;
   color: #fff;
-<<<<<<< HEAD
   background-color: #ff7575;
-=======
-  background-color: #ffafcc;
->>>>>>> 2d95d161f155da719734236ac42aced7677ce1a7
   border-radius: 25px;
   display: inline-block;
   display: -webkit-box;
@@ -368,13 +364,12 @@ nav ul li :hover {
   width: 100px;
 }
 
-<<<<<<< HEAD
 main > .container-fluid {
   padding: 25px 15px;
 }
 main > .container-fluid:nth-child(odd) {
-  background-color: rgba(121, 85, 72, 0.85);
-  color: #fff;
+  background-color: rgba(189, 224, 254, 0.85);
+  color: #000;
 }
 main > .container-fluid:nth-child(even) {
   background-color: #ebebeb;
@@ -386,8 +381,6 @@ main > .container-fluid P {
   padding: 4px 0;
 }
 
-=======
->>>>>>> 2d95d161f155da719734236ac42aced7677ce1a7
 main form {
   padding: 50px 0;
 }
@@ -427,36 +420,12 @@ main form .container .error {
 }
 main form .container .btn {
   padding: 10px 20px;
-<<<<<<< HEAD
-  background-color: #795548;
-=======
   background-color: #ffafcc;
->>>>>>> 2d95d161f155da719734236ac42aced7677ce1a7
   color: #fff;
   border-radius: 8px;
   cursor: pointer;
 }
 
-<<<<<<< HEAD
-=======
-main > .container-fluid {
-  padding: 25px 15px;
-}
-main > .container-fluid:nth-child(odd) {
-  background-color: rgba(189, 224, 254, 0.85);
-  color: #000;
-}
-main > .container-fluid:nth-child(even) {
-  background-color: #ebebeb;
-}
-main > .container-fluid h2 {
-  padding: 10px 0;
-}
-main > .container-fluid P {
-  padding: 4px 0;
-}
-
->>>>>>> 2d95d161f155da719734236ac42aced7677ce1a7
 footer {
   background-color: #ffafcc;
   padding: 40px 0;
