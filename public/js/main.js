@@ -1,9 +1,8 @@
 // "use strict";
 /**
- * TODO: Beautify css
+ * TODO: Remove animation & replace with loading screen
  * TODO: Hide nav when footer enter the view
  * TODO: Add cart page with added items
- * TODO: Make better animation depending on width
  * TODO:
  */
 
@@ -11,10 +10,10 @@
  * @author Belal Mahmoud
  */
 
-import { scrollOn } from "./upArrow/arrowUp.js";
-import { sliderOn } from "./slider/slider.js";
-import { makeShop } from "./shop/card.js";
-import { updateCart } from "./shop/cart.js";
+import { scrollOn } from "./layout/upArrow/arrowUp.js";
+import { sliderOn } from "./layout/slider/slider.js";
+import { makeShop } from "./layout/shop/card.js";
+import { updateCart } from "./layout/shop/cart.js";
 import { validationOn } from "./validation/contact.js";
 window.onload = onLoad;
 

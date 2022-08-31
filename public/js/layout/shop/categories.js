@@ -1,4 +1,4 @@
-import { widthUp, widthDown } from "../general/animation.js";
+import { widthUp, widthDown } from "../../helpers/animation.js";
 
 /** Categories buttons */
 const btns = document.querySelectorAll(".categories p");

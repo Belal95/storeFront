@@ -1,4 +1,4 @@
-import { fadeIn, fadeOut } from "../general/animation.js";
+import { fadeIn, fadeOut } from "../../helpers/animation.js";
 
 const arrowUp = document.getElementById("upArrow");
 arrowUp.addEventListener("click", goUp);

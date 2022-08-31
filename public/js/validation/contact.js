@@ -1,4 +1,4 @@
-import { fadeIn, fadeOut } from "../general/animation.js";
+import { fadeIn, fadeOut } from "..//animation.js";
 import {
   checkEmail,
   checkMessage,
