@@ -5,7 +5,7 @@
 }
 
 .nav {
-  background-color: #795548;
+  background-color: #ffafcc;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -24,7 +24,7 @@ nav ul {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   list-style: none;
-  height: 44px;
+  height: 2.75em;
 }
 nav ul li {
   -webkit-box-flex: 1;
@@ -35,7 +35,7 @@ nav ul li {
 nav ul li a {
   height: 100%;
   padding: 10px 0;
-  color: #fefae0;
+  color: #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,13 +64,13 @@ nav ul li:last-child #cart {
   -webkit-transform: translate(-63%, -75%);
           transform: translate(-63%, -75%);
   padding: 4px;
-  background-color: blue;
+  background-color: #ff7575;
+  border: 0.1px solid rgb(255, 255, 255);
   color: #fff;
   border-radius: 50%;
 }
 nav ul li :hover {
-  color: #faedcd;
-  background-color: rgb(255, 142, 66);
+  background-color: #ffc8dd;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
@@ -83,8 +83,9 @@ nav ul li :hover {
   opacity: 0;
   display: none;
   width: 44px;
-  background-color: #eee;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: #fff;
+  background-color: #ff7575;
+  border: 1px solid white;
   border-radius: 50%;
   position: fixed;
   bottom: 20px;
@@ -93,8 +94,11 @@ nav ul li :hover {
   right: 30px;
   padding: 10px;
 }
+#upArrow svg {
+  fill: #fff;
+}
 #upArrow:hover {
-  background-color: #ddd;
+  background-color: #ff7575;
 }
 
 .slider {
@@ -114,12 +118,12 @@ nav ul li :hover {
   border-radius: 44%;
   padding: 10px;
   cursor: pointer;
-  background-color: rgba(121, 85, 72, 0.5);
+  background-color: rgba(255, 175, 204, 0.8);
 }
 .slider #arrowLeft:hover,
 .slider #arrowRight:hover {
-  background-color: rgba(121, 85, 72, 0.7);
-  border: 1px solid #795548;
+  background-color: rgba(255, 200, 221, 0.8);
+  border: 1px solid rgba(255, 200, 221, 0.8);
 }
 .slider #arrowLeft:nth-child(2),
 .slider #arrowRight:nth-child(2) {
@@ -152,15 +156,15 @@ nav ul li :hover {
   cursor: pointer;
   -webkit-transition: border 100ms;
   transition: border 100ms;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 175, 204, 0.8);
 }
 .slider .bullets div:hover {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: 1px solid #fff;
+  background-color: rgba(255, 200, 221, 0.8);
+  border: 1px solid rgba(255, 200, 221, 0.8);
 }
 .slider .bullets div.selected {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: 1px solid #fff;
+  background-color: rgba(255, 200, 221, 0.8);
+  border: 1px solid rgba(255, 200, 221, 0.8);
 }
 .slider .container {
   height: calc(100vh - 47px);
@@ -189,7 +193,7 @@ nav ul li :hover {
 }
 
 .section {
-  background: #ccd5ae;
+  background: #bde0fe;
   color: #000;
   padding: 50px 20px;
   margin-top: -2px;
@@ -216,9 +220,9 @@ nav ul li :hover {
      -moz-appearance: none;
           appearance: none;
   background-color: transparent;
-  border: 2px solid red;
+  border: 2px solid #ffafcc;
   border-radius: 3em;
-  color: red;
+  color: #ffafcc;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -242,23 +246,30 @@ nav ul li :hover {
 .shop .container .categories p:hover, .shop .container .categories p:focus {
   color: #fff;
   outline: 0;
-  -webkit-box-shadow: 0 0 40px 40px red inset;
-          box-shadow: 0 0 40px 40px red inset;
+  -webkit-box-shadow: 0 0 40px 40px #ffafcc inset;
+          box-shadow: 0 0 40px 40px #ffafcc inset;
 }
 .shop .container .items {
   padding-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-template-rows: repeat(auto-fill, 400px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
   gap: 20px;
 }
 .shop .container .items .card {
+  -ms-flex-preferred-size: 240px;
+      flex-basis: 240px;
+  height: auto;
   border: 1px solid #efefef;
   -webkit-transform-origin: top left;
           transform-origin: top left;
   border-radius: 25px;
-  width: 100%;
   overflow: hidden;
   position: relative;
   -webkit-transition: all 300ms;
@@ -274,13 +285,15 @@ nav ul li :hover {
   opacity: 0.8;
 }
 .shop .container .items .card img {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -o-object-fit: contain;
      object-fit: contain;
   -webkit-transition: all 500ms;
   transition: all 500ms;
-  max-height: 120%;
-  max-width: 120%;
+  max-height: 100%;
+  max-width: 150%;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -291,13 +304,13 @@ nav ul li :hover {
   padding: 15px;
   width: 100%;
   color: #000;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(189, 224, 254, 0.6);
 }
 .shop .container .items .card .text .btn {
   padding: 5px 10px;
   cursor: pointer;
   color: #fff;
-  background-color: rgb(82, 82, 243);
+  background-color: #ffafcc;
   border-radius: 25px;
   display: inline-block;
   display: -webkit-box;
@@ -312,8 +325,70 @@ nav ul li :hover {
   width: 100px;
 }
 
+main form {
+  padding: 50px 0;
+}
+main form .container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 15px 10px;
+  max-width: 500px;
+}
+main form .container:not(:last-child) :nth-child(odd) {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+main form .container:not(:last-child) :nth-child(even) {
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+}
+main form .container .error {
+  position: absolute;
+  width: 180px;
+  padding: 10px 5px;
+  border-radius: 15px;
+  border: 1px solid rgb(109, 4, 4);
+  color: rgb(109, 4, 4);
+  background-color: rgb(255, 166, 166);
+  right: -190px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+main form .container .btn {
+  padding: 10px 20px;
+  background-color: #ffafcc;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+main > .container-fluid {
+  padding: 25px 15px;
+}
+main > .container-fluid:nth-child(odd) {
+  background-color: rgba(189, 224, 254, 0.85);
+  color: #000;
+}
+main > .container-fluid:nth-child(even) {
+  background-color: #ebebeb;
+}
+main > .container-fluid h2 {
+  padding: 10px 0;
+}
+main > .container-fluid P {
+  padding: 4px 0;
+}
+
 footer {
-  background-color: #795548;
+  background-color: #ffafcc;
   padding: 40px 0;
 }
 footer .container {

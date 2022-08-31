@@ -1,7 +1,6 @@
 import { goRight } from "./images.js";
 import { makeArrows } from "./arrows.js";
 import { makeBullets, goToBullet } from "./bullets.js";
-// Slider General fn
 /** Creates the slider, listeners, intervals & logic */
 
 function sliderOn() {

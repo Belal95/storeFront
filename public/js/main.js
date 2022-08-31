@@ -1,7 +1,6 @@
 // "use strict";
 /**
- * TODO: Validate Contact us Form with regex
- * TODO: Beautify css
+ * TODO: Remove animation & replace with loading screen
  * TODO: Hide nav when footer enter the view
  * TODO: Add cart page with added items
  * TODO:
@@ -11,10 +10,10 @@
  * @author Belal Mahmoud
  */
 
-import { scroll } from "./upArrow/arrowUp.js";
-import { sliderOn } from "./slider/slider.js";
-import { makeShop } from "./shop/card.js";
-import { updateCart } from "./shop/cart.js";
+import { scrollOn } from "./layout/upArrow/arrowUp.js";
+import { sliderOn } from "./layout/slider/slider.js";
+import { makeShop } from "./layout/shop/card.js";
+import { updateCart } from "./layout/shop/cart.js";
 import { validationOn } from "./validation/contact.js";
 window.onload = onLoad;
 
@@ -22,7 +21,7 @@ window.onload = onLoad;
  * Fires the scripts depending on the file
  */
 function onLoad() {
-  window.onscroll = scroll;
+  scrollOn;
   const path = getFileName();
   if (path == "index") onLoadHome();
   if (path == "about") onLoadAbout();

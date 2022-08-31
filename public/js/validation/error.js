@@ -1,4 +1,4 @@
-import { appendChild } from "../general/manipulation.js";
+import { appendChild } from "../helpers/manipulation.js";
 
 /**
  *
