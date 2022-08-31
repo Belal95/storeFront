@@ -1,6 +1,6 @@
-@use "../global/colors";
+@use "../global/colors" as *;
 .nav {
-  background-color: colors.$main;
+  background-color: $main;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -12,14 +12,14 @@ nav {
     align-items: center;
     flex-wrap: wrap;
     list-style: none;
-    height: 44px;
+    height: 2.75em;
     li {
       flex-grow: 1;
       height: 100%;
       a {
         height: 100%;
         padding: 10px 0;
-        color: colors.$alt;
+        color: $text;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -39,14 +39,14 @@ nav {
           left: 63%;
           transform: translate(-63%, -75%);
           padding: 4px;
-          background-color: blue;
+          background-color: #ff7575;
+          border: 0.1px solid rgb(255, 255, 255);
           color: #fff;
           border-radius: 50%;
         }
       }
       :hover {
-        color: #faedcd;
-        background-color: colors.$main-hover;
+        background-color: $main-hover;
         transform: scale(1.2);
       }
     }

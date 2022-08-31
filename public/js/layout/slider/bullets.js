@@ -1,5 +1,4 @@
-import { indexOfChild } from "../general/search.js";
-import { appendDiv } from "../general/manipulation.js";
+import { indexOfChild, appendDiv } from "../../helpers/search.js";
 import { goToImage } from "./images.js";
 
 /**

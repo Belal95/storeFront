@@ -3,8 +3,8 @@ main {
   > .container-fluid {
     padding: 25px 15px;
     &:nth-child(odd) {
-      background-color: rgba($color: colors.$main, $alpha: 0.85);
-      color: #fff;
+      background-color: rgba($color: colors.$highlight, $alpha: 0.85);
+      color: colors.$text;
     }
     &:nth-child(even) {
       background-color: #ebebeb;
